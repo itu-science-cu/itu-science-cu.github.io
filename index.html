@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0e2d4a">
+  <meta name="description" content="Information Technology Unit - Faculty of Science - Cairo University">
+  <title>وحدة تكنولوجيا المعلومات | كلية العلوم - جامعة القاهرة</title>
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Tahoma,Arial,sans-serif;color:#18334f;background:#eef3f9;line-height:1.85}
+    a{color:inherit}
+    img{max-width:100%}
+    .site{width:min(1120px,100%);margin:auto;padding:18px}
+    .topbar{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin:0 0 14px}
+    .lang-btn{border:1px solid #cfdce6;background:#fff;color:#0e2d4a;border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer}
+    .lang-btn.active{background:#0e2d4a;color:#fff;border-color:#0e2d4a}
+    .hero{background:linear-gradient(135deg,#0e2d4a,#1d5d91);color:#fff;padding:42px 24px;border-radius:24px;text-align:center;box-shadow:0 14px 34px rgba(14,45,74,.18);margin-bottom:20px}
+    .logo{width:165px;height:165px;object-fit:contain;background:#fff;border-radius:50%;padding:3px;display:block;margin:0 auto 18px;box-shadow:0 5px 20px rgba(0,0,0,.18)}
+    .hero h1{margin:0;font-size:clamp(28px,5vw,42px);line-height:1.35}
+    .hero p{margin:6px 0 0;font-size:clamp(15px,2.7vw,19px)}
+    nav{background:#fff;border-radius:18px;padding:14px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;box-shadow:0 8px 24px rgba(14,45,74,.08);margin-bottom:24px}
+    nav a{text-decoration:none;background:#f6f9fc;border:1px solid #dce5ec;border-radius:999px;padding:9px 14px;font-size:14px;text-align:center;flex:1 1 150px;max-width:220px}
+    .section{background:#fff;border:1px solid #dce5ec;border-radius:20px;padding:clamp(20px,4vw,34px);margin-bottom:26px;box-shadow:0 8px 24px rgba(14,45,74,.08)}
+    .section-title{display:flex;align-items:center;justify-content:center;gap:12px;font-size:clamp(23px,4.5vw,32px);font-weight:700;color:#0e2d4a;text-align:center;line-height:1.4;margin-bottom:22px}
+    .icon{width:48px;height:48px;border-radius:50%;background:#e8f1f8;display:inline-flex;align-items:center;justify-content:center;font-size:23px;flex:0 0 48px}
+    .lead{max-width:900px;margin:auto;text-align:center;color:#6a788b;font-size:clamp(15px,2.8vw,18px)}
+    .grid2,.grid4,.members,.contact-grid{display:grid;gap:16px}
+    .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .members{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin:auto}
+    .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:#fbfcfd;border:1px solid #dce5ec;border-radius:16px;padding:22px}
+    .card h3{margin:0 0 7px;color:#0e2d4a;font-size:19px}
+    .card p{margin:0;color:#6a788b}
+    .director{max-width:420px;margin:0 auto 22px;padding:30px;text-align:center;color:#fff;background:linear-gradient(135deg,#0e2d4a,#1d5d91);border-radius:18px}
+    .person{text-align:center;padding:26px}
+    .person-img{width:132px;height:132px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 14px;border:4px solid #e8f1f8;box-shadow:0 6px 18px rgba(14,45,74,.12)}
+    .director .person-img{width:148px;height:148px;border-color:rgba(255,255,255,.88)}
+    .person-name{font-size:21px;font-weight:700;color:#0e2d4a;margin-bottom:5px}
+    .director .person-name{color:#fff;font-size:23px}
+    .person-role{color:#6a788b;font-size:15px}
+    .director .person-role{color:#d8e2eb;font-size:16px}
+    .contact{text-decoration:none;text-align:center;background:#fbfcfd;border:1px solid #dce5ec;border-radius:16px;padding:22px}
+    .contact .emoji{font-size:28px;margin-bottom:8px}
+    .contact strong{display:block;color:#0e2d4a;font-size:19px}
+    .contact span{color:#1d5d91;overflow-wrap:anywhere}
+    footer{text-align:center;color:#6a788b;padding:14px;font-size:14px}
+    .lang-panel[hidden]{display:none!important}
+    @media (max-width:800px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:620px){
+      .site{padding:10px} .hero{padding:28px 14px;border-radius:18px} .logo{width:125px;height:125px}
+      nav a{flex:1 1 46%;max-width:none}
+      .grid2,.grid4,.members,.contact-grid{grid-template-columns:1fr}
+      .section{border-radius:17px} .topbar{justify-content:center}
+    }
+  </style>
+</head>
+<body>
+<main class="site">
+  <div class="topbar" aria-label="Language switcher">
+    <button class="lang-btn active" id="btn-ar" type="button" onclick="setLang('ar')">العربية</button>
+    <button class="lang-btn" id="btn-en" type="button" onclick="setLang('en')">English</button>
+  </div>
+
+  <div id="panel-ar" class="lang-panel" lang="ar" dir="rtl">
+    <header class="hero">
+      <img class="logo" src="https://drive.google.com/thumbnail?id=1ZnoNdPxyJUdMn-XOxwGCB9Az28I50vAK&sz=w1000" alt="شعار وحدة تكنولوجيا المعلومات">
+      <h1>وحدة تكنولوجيا المعلومات</h1>
+      <p>كلية العلوم – جامعة القاهرة</p>
+    </header>
+    <nav>
+      <a href="#ar-about">نبذة عن الوحدة</a><a href="#ar-vision">الرؤية والرسالة</a><a href="#ar-goals">الأهداف</a><a href="#ar-team">إدارة الوحدة</a><a href="#ar-contact">تواصل معنا</a>
+    </nav>
+
+    <section class="section" id="ar-about">
+      <div class="section-title"><span class="icon">💻</span><span>نبذة عن الوحدة</span></div>
+      <p class="lead">تُعد وحدة تكنولوجيا المعلومات بكلية العلوم – جامعة القاهرة إحدى الوحدات الداعمة للتحول الرقمي وتطوير البنية التكنولوجية بالكلية، وتعمل على توفير بيئة تقنية متكاملة تسهم في رفع كفاءة العمل الأكاديمي والإداري، وتحسين جودة الخدمات الإلكترونية المقدمة لأعضاء هيئة التدريس والهيئة المعاونة والعاملين والطلاب. وتضطلع الوحدة بمهام إدارة وتشغيل البنية التحتية للشبكات ونظم المعلومات والخدمات الإلكترونية، إلى جانب تقديم الدعم الفني والمساهمة في تطوير الحلول الرقمية التي تساعد على سرعة إنجاز الأعمال ودقة تداول المعلومات. كما تعمل الوحدة على تعزيز الاستخدام الفعّال والآمن لتكنولوجيا المعلومات، ومواكبة التطورات التقنية بما يدعم توجه الكلية والجامعة نحو التحول الرقمي وتطوير الخدمات المؤسسية.</p>
+    </section>
+
+    <section class="section" id="ar-vision">
+      <div class="section-title"><span class="icon">🎯</span><span>الرؤية والرسالة</span></div>
+      <div class="grid2">
+        <article class="card"><h3>الرؤية</h3><p>الريادة في توظيف تكنولوجيا المعلومات والتحول الرقمي بما يسهم في بناء بيئة أكاديمية وإدارية ذكية، متكاملة وآمنة، ويعزز كفاءة الأداء وجودة الخدمات الرقمية بكلية العلوم – جامعة القاهرة.</p></article>
+        <article class="card"><h3>الرسالة</h3><p>توفير وإدارة بنية تكنولوجية موثوقة ومتطورة، ودعم نظم المعلومات والخدمات الإلكترونية والشبكات بالكلية، مع تقديم الدعم الفني المستمر وتطوير الخدمات الرقمية وفق أفضل الممارسات التقنية، بما يضمن سهولة الوصول إلى المعلومات، ورفع كفاءة الأداء، وتعزيز التحول الرقمي وخدمة العملية التعليمية والبحثية والإدارية.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="ar-goals">
+      <div class="section-title"><span class="icon">⚙️</span><span>الأهداف الرئيسية</span></div>
+      <div class="grid4">
+        <article class="card"><h3>تطوير البنية التحتية الرقمية</h3><p>دعم وتطوير البنية التحتية التكنولوجية والشبكات بما يضمن كفاءة واستمرارية الخدمات داخل الكلية.</p></article>
+        <article class="card"><h3>دعم نظم المعلومات</h3><p>دعم وتشغيل نظم المعلومات الإدارية والمساهمة في تحسين تدفق البيانات ودقة الخدمات المؤسسية.</p></article>
+        <article class="card"><h3>تطوير الخدمات الإلكترونية</h3><p>المساهمة في تطوير وإدارة الخدمات الإلكترونية بما يرفع كفاءة الأداء ويسهّل الوصول إلى الخدمات الرقمية.</p></article>
+        <article class="card"><h3>تعزيز الاستمرارية والأمان</h3><p>دعم استمرارية الخدمات التقنية وتعزيز الاستخدام الآمن والمنظم لتكنولوجيا المعلومات داخل الكلية.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="ar-team">
+      <div class="section-title"><span class="icon">👥</span><span>إدارة وأعضاء الوحدة</span></div>
+      <article class="director">
+        <img class="person-img" src="https://drive.google.com/thumbnail?id=1mCbicFw_MK5WVo7sr1dZ7nPjgKoToIH_&sz=w1000" alt="د. ناصر العزب">
+        <div class="person-name">د. ناصر العزب</div><div class="person-role">مدير وحدة تكنولوجيا المعلومات</div>
+      </article>
+      <div class="members">
+        <article class="card person"><img class="person-img" src="https://drive.google.com/thumbnail?id=1FdQ4PAkSYHHi12GRdWIaNzdpXXw_iqJL&sz=w1000" alt="م. إيناس الهواري"><div class="person-name">م. إيناس الهواري</div><div class="person-role">مسؤول نظم المعلومات الإدارية وإدارة الخدمات الإلكترونية</div></article>
+        <article class="card person"><img class="person-img" src="https://drive.google.com/thumbnail?id=1xUkITTmA0lAwUzF-yvkpoSJEbRkoQaon&sz=w1000" alt="م. مصطفى طه"><div class="person-name">م. مصطفى طه</div><div class="person-role">مسؤول الشبكات وتكنولوجيا المعلومات وإدارة الخدمات الإلكترونية</div></article>
+      </div>
+    </section>
+
+    <section class="section" id="ar-contact">
+      <div class="section-title"><span class="icon">☎️</span><span>تواصل معنا</span></div>
+      <div class="contact-grid">
+        <a class="contact" href="mailto:itu@sci.cu.edu.eg"><div class="emoji">✉️</div><strong>البريد الإلكتروني</strong><span dir="ltr">itu@sci.cu.edu.eg</span></a>
+        <a class="contact" href="tel:33561"><div class="emoji">📞</div><strong>رقم التليفون</strong><span dir="ltr">33561</span></a>
+      </div>
+    </section>
+    <footer>وحدة تكنولوجيا المعلومات – كلية العلوم – جامعة القاهرة</footer>
+  </div>
+
+  <div id="panel-en" class="lang-panel" lang="en" dir="ltr" hidden>
+    <header class="hero">
+      <img class="logo" src="https://drive.google.com/thumbnail?id=1ZnoNdPxyJUdMn-XOxwGCB9Az28I50vAK&sz=w1000" alt="Information Technology Unit Logo">
+      <h1>Information Technology Unit</h1>
+      <p>Faculty of Science – Cairo University</p>
+    </header>
+    <nav>
+      <a href="#en-about">About the Unit</a><a href="#en-vision">Vision & Mission</a><a href="#en-goals">Objectives</a><a href="#en-team">Unit Team</a><a href="#en-contact">Contact Us</a>
+    </nav>
+
+    <section class="section" id="en-about">
+      <div class="section-title"><span class="icon">💻</span><span>About the Unit</span></div>
+      <p class="lead">The Information Technology Unit at the Faculty of Science, Cairo University is one of the units supporting digital transformation and the development of the Faculty’s technological infrastructure. The Unit works to provide an integrated technical environment that contributes to improving the efficiency of academic and administrative work and enhancing the quality of electronic services provided to faculty members, teaching assistants, staff, and students. Its responsibilities include the management and operation of network infrastructure, information systems, and electronic services, in addition to providing technical support and contributing to the development of digital solutions that facilitate efficient workflows and accurate information exchange. The Unit also promotes the effective and secure use of information technology and keeps pace with technological developments in support of the Faculty’s and University’s digital transformation and institutional service development.</p>
+    </section>
+
+    <section class="section" id="en-vision">
+      <div class="section-title"><span class="icon">🎯</span><span>Vision & Mission</span></div>
+      <div class="grid2">
+        <article class="card"><h3>Vision</h3><p>To achieve leadership in the effective use of information technology and digital transformation by building a smart, integrated, and secure academic and administrative environment that enhances performance efficiency and the quality of digital services at the Faculty of Science, Cairo University.</p></article>
+        <article class="card"><h3>Mission</h3><p>To provide and manage a reliable and advanced technological infrastructure, support information systems, electronic services, and networks within the Faculty, and provide continuous technical support and digital service development in accordance with best technical practices, ensuring easy access to information, improved performance efficiency, strengthened digital transformation, and effective support for educational, research, and administrative activities.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="en-goals">
+      <div class="section-title"><span class="icon">⚙️</span><span>Main Objectives</span></div>
+      <div class="grid4">
+        <article class="card"><h3>Developing Digital Infrastructure</h3><p>Supporting and developing the technological infrastructure and networks to ensure efficient and continuous services across the Faculty.</p></article>
+        <article class="card"><h3>Supporting Information Systems</h3><p>Supporting and operating management information systems and contributing to improved data flow and accurate institutional services.</p></article>
+        <article class="card"><h3>Developing Electronic Services</h3><p>Contributing to the development and management of electronic services to improve performance and facilitate access to digital services.</p></article>
+        <article class="card"><h3>Enhancing Continuity & Security</h3><p>Supporting the continuity of technical services and promoting the secure and organized use of information technology within the Faculty.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="en-team">
+      <div class="section-title"><span class="icon">👥</span><span>Unit Management & Team</span></div>
+      <article class="director">
+        <img class="person-img" src="https://drive.google.com/thumbnail?id=1mCbicFw_MK5WVo7sr1dZ7nPjgKoToIH_&sz=w1000" alt="Dr. Nasser El-Ezzab">
+        <div class="person-name">Dr. Nasser El-Ezzab</div><div class="person-role">Director of the Information Technology Unit</div>
+      </article>
+      <div class="members">
+        <article class="card person"><img class="person-img" src="https://drive.google.com/thumbnail?id=1FdQ4PAkSYHHi12GRdWIaNzdpXXw_iqJL&sz=w1000" alt="Eng. Enas El-Hawary"><div class="person-name">Eng. Enas El-Hawary</div><div class="person-role">Management Information Systems and Electronic Services Officer</div></article>
+        <article class="card person"><img class="person-img" src="https://drive.google.com/thumbnail?id=1xUkITTmA0lAwUzF-yvkpoSJEbRkoQaon&sz=w1000" alt="Eng. Mostafa Taha"><div class="person-name">Eng. Mostafa Taha</div><div class="person-role">Networks, Information Technology, and Electronic Services Officer</div></article>
+      </div>
+    </section>
+
+    <section class="section" id="en-contact">
+      <div class="section-title"><span class="icon">☎️</span><span>Contact Us</span></div>
+      <div class="contact-grid">
+        <a class="contact" href="mailto:itu@sci.cu.edu.eg"><div class="emoji">✉️</div><strong>Email</strong><span>itu@sci.cu.edu.eg</span></a>
+        <a class="contact" href="tel:33561"><div class="emoji">📞</div><strong>Telephone</strong><span>33561</span></a>
+      </div>
+    </section>
+    <footer>Information Technology Unit – Faculty of Science – Cairo University</footer>
+  </div>
+</main>
+
+<script>
+function setLang(lang){
+  const ar = lang === 'ar';
+  document.getElementById('panel-ar').hidden = !ar;
+  document.getElementById('panel-en').hidden = ar;
+  document.getElementById('btn-ar').classList.toggle('active', ar);
+  document.getElementById('btn-en').classList.toggle('active', !ar);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = ar ? 'rtl' : 'ltr';
+  document.title = ar ? 'وحدة تكنولوجيا المعلومات | كلية العلوم - جامعة القاهرة' : 'Information Technology Unit | Faculty of Science - Cairo University';
+  try{localStorage.setItem('itu-lang',lang)}catch(e){}
+  if(location.hash === '#ar' || location.hash === '#en') history.replaceState(null,'',lang === 'en' ? '#en' : '#ar');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+(function(){
+  let lang = location.hash === '#en' ? 'en' : location.hash === '#ar' ? 'ar' : null;
+  if(!lang){try{lang=localStorage.getItem('itu-lang')}catch(e){}}
+  setLang(lang === 'en' ? 'en' : 'ar');
+})();
+</script>
+</body>
+</html>
